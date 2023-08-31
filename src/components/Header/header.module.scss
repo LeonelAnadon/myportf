@@ -1,0 +1,59 @@
+@import "../../globalStyles.scss";
+
+.container {
+  min-height: 2rem;
+  display: flex;
+  padding: 0.2rem 0.6rem;
+  justify-content: space-between;
+
+  & nav {
+    display: flex;
+    align-items: center;
+    & ul {
+      display: flex;
+      gap: 1rem;
+
+      & li {
+        font-size: 0.7rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        @include line-anim;
+
+        &:hover {
+          @include resalt-this;
+        }
+      }
+    }
+  }
+}
+
+.imgContainer {
+  & > img {
+    width: 5rem;
+  }
+}
+
+.btnContainers {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  & button {
+    // all: unset;
+    border: 1px solid #eee;
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    padding: 0.1rem 0.8rem;
+    height: 1.4rem;
+    width: 1.3rem;
+    gap: 0.1rem;
+    color: black;
+
+    & img {
+      max-width: 0.8rem;
+    }
+  }
+}

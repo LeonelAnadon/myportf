@@ -1,0 +1,44 @@
+@import "../../globalStyles.scss";
+
+.container {
+  height: max-content;
+  background-color: var(--bg-color);
+  transition: all 0.15s ease;
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  // box-shadow: .4rem .1rem .5rem rgb(226, 226, 226);
+
+  div:first-child {
+    flex: 1;
+    // display: flex;
+    // align-items: center;}
+    // justify-content: center;
+    background-image: url(../../assets/images/looper.svg);
+    background-position: 100% 50%;
+    background-size: 210%;
+    background-repeat: no-repeat;
+
+
+    h3 {
+      @include resalt-this;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      text-shadow: 0.2rem -0.1rem 0 var(--bg-color);
+    }
+  }
+
+  div:last-child {
+    flex: 4;
+    padding: 0.5rem;
+  }
+
+  p {
+    font-size: 0.67rem;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+  }
+}

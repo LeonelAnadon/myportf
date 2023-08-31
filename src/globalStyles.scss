@@ -1,0 +1,38 @@
+// Configuración global de colores
+$purple: #f759ff;
+$yellow: #fdc200;
+$black: #272932;
+$citrine: #d98324;
+$sunglow: #fdca40;
+$oxfordblue: #00072d;
+
+@mixin resalt-this {
+  color: transparent;
+  background: rgb(253, 194, 0);
+  // background: linear-gradient(90deg, rgb(253, 194, 0) 16%, rgb(247, 89, 255) 94%);
+  background: linear-gradient(45deg, $sunglow 16%, $purple 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+@mixin line-anim {
+  &:hover {
+    &::before {
+      width: 100%;
+      background: linear-gradient(45deg, $sunglow 50%, $purple 80%);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+}
+

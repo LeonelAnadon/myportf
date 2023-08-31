@@ -1,0 +1,83 @@
+@import "../../globalStyles.scss";
+
+.container {
+  min-height: 25rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 7rem;
+    // max-width: 40rem;
+    font-family: "Staatliches", cursive;
+    text-align: center;
+    
+    line-height: 1;
+
+    & > span {
+      @include resalt-this;
+      font-family: "Staatliches", cursive;
+    }
+
+    @media (max-width: 1250px) {
+      font-size: 6rem;
+    }
+    @media (max-width: 1050px) {
+      font-size: 5rem;
+    }
+    @media (max-width: 850px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 550px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  
+.bgImage {
+    max-width: 80vmax;
+    position: absolute;
+    z-index: -1;
+    left: 18vmax;
+    opacity: .3;
+}
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: -1rem;
+  font-size: 3rem;
+  transform: rotateZ(180deg);
+  animation: scrollNow 1s linear infinite;
+  font-family: "Staatliches", cursive;
+}
+
+@keyframes scrollNow {
+  0% {
+    transform: rotateZ(180deg) translateY(5%);
+  }
+  50% {
+    transform: rotateZ(180deg) translateY(20%);
+  }
+  80% {
+    transform: rotateZ(180deg) translateY(25%);
+  }
+  100% {
+    transform: rotateZ(180deg) translateY(0%);
+  }
+}

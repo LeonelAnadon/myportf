@@ -1,0 +1,32 @@
+@import "../../globalStyles.scss";
+
+.container {
+  min-height: 10rem;
+  padding: 1rem 0;
+  background-color:  var( --bg-light-color);
+  
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    // color: darken(#f759ff, 50%);
+
+  }
+}
+
+.skewContainer {
+  max-width: max-content;
+  padding: .2rem 1rem;
+  transform: skewX(-20deg);
+  background-color: var(--bg-color);
+  box-shadow: .5rem .4rem 0 darken($purple, 20%);
+  margin-bottom: 1rem;
+  & > * {
+    transform: skewX(20deg);
+  }
+}
+
+.servicesContainer {
+  display: flex;  
+  flex-flow: row wrap;
+  gap: .5rem;
+}

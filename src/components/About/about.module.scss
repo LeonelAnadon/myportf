@@ -1,0 +1,64 @@
+@import "../../globalStyles.scss";
+
+.container {
+  // background-color: red;
+  min-height: 10rem;
+  padding: 1rem 0;
+  overflow: hidden;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @media (max-width: 1070px){
+      flex-direction: column;
+    }
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  & h2 {
+    font-size: 1.2rem;
+  }
+
+  & p {
+    // font-size: 0.7rem;
+    font-size: 0.67rem;
+  }
+}
+
+.theTextCont {
+
+  p {
+    
+    line-height: 1.4;
+    white-space: pre-line;
+    transition: all .5s ease;
+
+    & img {
+      width: 1rem;
+      margin-bottom: -0.12rem;
+    }
+    margin-bottom: 1rem;
+  }
+  p::first-letter {
+    @include resalt-this;
+    margin-right: 0.1em;
+    font-size: 4rem;
+    font-weight: bold;
+    initial-letter: 3;
+    font-family: "Staatliches", cursive;
+  }
+  .abtitle {
+    margin-bottom: .5rem;
+  }
+}
+
+.mytech {
+  & > div:first-child {
+    margin-bottom: 0.3rem;
+  }
+}

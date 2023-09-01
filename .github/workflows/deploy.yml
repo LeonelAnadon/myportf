@@ -18,7 +18,7 @@ jobs:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
         target: "/var/www/lanadon.com.ar"
@@ -29,5 +29,5 @@ jobs:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
         script: ls

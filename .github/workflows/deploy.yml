@@ -38,3 +38,4 @@ jobs:
             source ~/.nvm/nvm.sh   
             npm i
             npm run build
+            sysctemctl restart nginx

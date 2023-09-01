@@ -34,8 +34,7 @@ jobs:
         script: |
             cd ${{secrets.THE_PATH}}
             git pull
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh   
             npm i
-            echo "Dependencias instaladas"
             npm run build
-            echo "Se hizo el build"
-            echo "Terminado"

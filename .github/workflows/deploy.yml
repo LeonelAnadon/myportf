@@ -18,8 +18,6 @@ jobs:
         git config --global user.email "leonelanadon95@gmail.com"
         git config --global credential.helper store
         git config --global credential.helper 'cache --timeout=3600'
-      env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Copy repository contents via scp
       uses: appleboy/scp-action@master

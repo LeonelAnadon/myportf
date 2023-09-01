@@ -34,3 +34,8 @@ jobs:
         script: |
             cd ${{secrets.THE_PATH}}
             git pull
+            npm i
+            echo "Dependencias instaladas"
+            npm run build
+            echo "Se hizo el build"
+            echo "Terminado"

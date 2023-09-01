@@ -30,5 +30,6 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
+            cd /var/www/lanadon.com.ar/myportf
             ls
             git pull

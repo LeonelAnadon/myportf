@@ -8,11 +8,12 @@ import {
   Match,
   createResource,
 } from "solid-js";
-import { Trans } from "@mbarzda/solid-i18next";
+import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 import styles from "./themodal.module.scss";
 import { IFormData, IModalTechData } from "../../interfaces/global";
 import Spinner from "../Spinner/Spinner";
 import { sendMsg } from "../../services/sendMsg";
+import closeIcon from "../../assets/icons/close.svg";
 
 interface ModalProps {
   toggleModal: () => void;
@@ -21,6 +22,8 @@ interface ModalProps {
 }
 
 const TheModal: Component<ModalProps> = (props) => {
+  const [t] = useTransContext();
+
   const [isShow, setIsShow] = createSignal(false);
   const [msgSended, setMsgSended] = createSignal(false);
   const [isError, setIsError] = createSignal(false);
@@ -64,8 +67,6 @@ const TheModal: Component<ModalProps> = (props) => {
     if (data() === "error") {
       setIsError(true);
     }
-
-    // onCleanup(() => resetForm());
   });
 
   const toggleModalOut = () => {
@@ -86,15 +87,6 @@ const TheModal: Component<ModalProps> = (props) => {
     }));
   };
 
-  // function resetForm() {
-  //   setFormData({
-  //     name: "",
-  //     email: "",
-  //     msg: "",
-  //   });
-  //   setMsgSended(false);
-  // }
-
   const handleSubmit = (e: Event) => {
     e.preventDefault();
     setsFormData(formData());
@@ -103,12 +95,18 @@ const TheModal: Component<ModalProps> = (props) => {
   return (
     <Show when={props.show}>
       <div class={styles.overlay} onClick={() => toggleModalOut()}></div>
+
       <div
         class={`${styles.popup} ${isShow() ? styles.show : styles.hide}`}
         onTransitionEnd={() => toggleModalExit()}
       >
+        <span class={styles.closeBtnContainer}>
+          <button onClick={() => toggleModalOut()}>
+            <img alt="close" src={closeIcon} />
+          </button>
+        </span>
         <div>
-          <h3>Contact</h3>
+          <h3>{t("modal.the_text")}</h3>
         </div>
         <div>
           <Show when={isError()}>
@@ -134,10 +132,10 @@ const TheModal: Component<ModalProps> = (props) => {
             </div>
           </Show>
           <Show when={!msgSended() && !isError()}>
-            <h4>Formulario de contacto</h4>
+            <h4>{t("modal.title")}</h4>
             <form onSubmit={handleSubmit}>
               <div>
-                <label>Nombre</label>
+                <label>{t("modal.label_name")}</label>
                 <input
                   required
                   disabled={data.loading}
@@ -147,7 +145,7 @@ const TheModal: Component<ModalProps> = (props) => {
                 />
               </div>
               <div>
-                <label>Correo</label>
+                <label>{t("modal.label_email")}</label>
                 <input
                   required
                   disabled={data.loading}
@@ -157,7 +155,7 @@ const TheModal: Component<ModalProps> = (props) => {
                 />
               </div>
               <div>
-                <label>Mensaje</label>
+                <label>{t("modal.label_msg")}</label>
                 <textarea
                   required
                   disabled={data.loading}
@@ -168,7 +166,7 @@ const TheModal: Component<ModalProps> = (props) => {
               </div>
               <button type="submit" disabled={data.loading}>
                 <Show when={!data.loading} fallback={<Spinner />}>
-                  Enviar
+                  {t("modal.btn_submit")}
                 </Show>
               </button>
             </form>

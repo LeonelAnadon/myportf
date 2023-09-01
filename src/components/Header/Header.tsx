@@ -11,9 +11,11 @@ import signWhite from "../../assets/sign_white.png";
 import langIcon from "../../assets/icons/language.svg";
 import sunIcon from "../../assets/icons/sun.svg";
 import moonIcon from "../../assets/icons/moon.svg";
+import menuIcon from "../../assets/icons/menu.svg";
 import { Trans, useTransContext } from "@mbarzda/solid-i18next";
 
 interface HeaderProps {
+  toggleDrawer: () => void;
   toggleDarkMode: () => void;
   isDarkMode: boolean;
 }
@@ -42,25 +44,39 @@ const Header: Component<HeaderProps> = (props) => {
       <nav>
         <ul>
           <li>
-            <Trans key="nav.services" children={"Servicios"} />
+            <a href="#about">
+              <Trans key="nav.about" children={"Sobre mi"} />
+            </a>
           </li>
           <li>
-            <Trans key="nav.works" children={"Mis proyectos"} />
+            <a href="#services">
+              <Trans key="nav.services" children={"Mis servicios"} />
+            </a>
           </li>
           <li>
-            <Trans key="nav.contact" children={"Contactame"} />
+            <a href="#contact">
+              <Trans key="nav.contact" children={"Contactame"} />
+            </a>
           </li>
         </ul>
       </nav>
       <div class={styles.btnContainers}>
         <Show when={currentLanguage() === "es"}>
-          <button type="button" onClick={() => handleToggleLng("en")} title="English">
+          <button
+            type="button"
+            onClick={() => handleToggleLng("en")}
+            title="English"
+          >
             <img alt="" src={langIcon} />
             EN
           </button>
         </Show>
         <Show when={currentLanguage() === "en"}>
-          <button type="button" onClick={() => handleToggleLng("es")} title="Español">
+          <button
+            type="button"
+            onClick={() => handleToggleLng("es")}
+            title="Español"
+          >
             <img alt="" src={langIcon} />
             ES
           </button>
@@ -75,6 +91,9 @@ const Header: Component<HeaderProps> = (props) => {
             <img alt="" src={moonIcon} />
           </button>
         </Show>
+        <button class={styles.menuHidden} onClick={() => props.toggleDrawer()}>
+          <img alt="" src={menuIcon} />
+        </button>
       </div>
     </header>
   );

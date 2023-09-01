@@ -11,6 +11,7 @@ const Contact: Component<ContactProps> = (props) => {
 
   return (
     <section
+      id="contact"
       class={styles.container}
       data-aos="fade-down"
       data-aos-easing="ease"
@@ -18,11 +19,11 @@ const Contact: Component<ContactProps> = (props) => {
     >
       <div>
         <div class={styles.contactInfo}>
-          <b>Comencemos a trabajar en tu proyecto</b>
-          <p>Contacta conmigo</p>
+          <b>{t("contact.title")}</b>
+          <p>{t("contact.subtitle")}</p>
         </div>
         <div class={styles.btnContainer}>
-          <button onClick={props.toggleModal}>Contactame</button>
+          <button onClick={props.toggleModal}>{t("contact.btn")}</button>
         </div>
       </div>
     </section>

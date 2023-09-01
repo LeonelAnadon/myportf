@@ -28,9 +28,9 @@ const Footer: Component<FooterProps> = (props) => {
           <div class={styles.sep}></div>
           <div>
             <div>
-              <p>Desarrollador web, especializado en Front-End.</p>
-              <p>Auditor de código y buenas prácticas</p>
-              <p>Podes seguirme en mis redes</p>
+              <p>{t("footer.text_1")}</p>
+              <p>{t("footer.text_2")}</p>
+              <p>{t("footer.text_3")}</p>
             </div>
           </div>
           <div class={styles.sep}></div>
@@ -45,7 +45,7 @@ const Footer: Component<FooterProps> = (props) => {
         </div>
         <div class={styles.copyContainer}>
           <p>
-            &copy; {theYear} Leonel Anadón. {t("footer")}
+            &copy; {theYear} Leonel Anadón. {t("footer.copyright")}
           </p>
         </div>
       </div>

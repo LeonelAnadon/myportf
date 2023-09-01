@@ -13,10 +13,12 @@ import Separator from "./components/Separator/Separator";
 import Contact from "./components/Contact/Contact";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Drawer from "./components/Drawer/Drawer";
 
 const App: Component = () => {
   const [isDarkMode, setIsDarkMode] = createSignal<boolean>(false);
   const [showModal, setShowModal] = createSignal<boolean>(false);
+  const [showDrawer, setShowDrawer] = createSignal<boolean>(false);
 
   createEffect(() => {
     AOS.init()
@@ -28,14 +30,17 @@ const App: Component = () => {
   const toggleModal = () => {
     setShowModal(!showModal());
   };
-
+  const toggleDrawer = () => {
+    setShowDrawer(!showDrawer());
+  };
   return (
     <div
       class={`${styles.App} ${
         isDarkMode() ? styles.darkMode : styles.lightMode
       }`}
     >
-      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode()} />
+      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode()} toggleDrawer={toggleDrawer} />
+      <Drawer toggleDrawer={toggleDrawer} showDrawer={showDrawer()} isDarkMode={isDarkMode()} />
       <main>
         <Hero />
         <ScrollingTechnologies isDarkMode={isDarkMode()} />

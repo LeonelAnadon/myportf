@@ -8,7 +8,7 @@ interface ServiceItemProps {
 
 const ServiceItem: Component<ServiceItemProps> = (props) => {
   return (
-    <div class={styles.container} data-aos="zoom-in">
+    <div class={styles.container} data-aos="fade-left">
       <div>{/* <h3>React</h3> */}</div>
       <div>
         <h4>{props.data.title}</h4>

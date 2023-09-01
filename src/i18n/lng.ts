@@ -3,8 +3,8 @@ export const resources = {
     translation: {
       hello: "Hello",
       nav: {
+        about: "About me",
         services: "Services",
-        works: "Works",
         contact: "Contact",
       },
       hero: {
@@ -98,15 +98,36 @@ export const resources = {
           },
         ],
       },
-      footer: 'All rights reserved.'
+      contact: {
+        title: "Let's start working on your project",
+        subtitle: "Get in touch with me",
+        btn: "Get in touch",
+      },
+      footer: {
+        copyright: "All rights reserved.",
+        text_1: "Web Developer, specialized in Front-End",
+        text_2: "Code reviewer and advocate for best practices",
+        text_3: "You can also find me on social media",
+      },
+      modal: {
+        the_text: "Contact",
+        title: "Contact Form",
+        label_name: "Name",
+        label_email: "Email",
+        label_msg: "Message",
+        btn_submit: "Submit",
+      },
+      drawer: {
+        close: 'Close'
+      }
     },
   },
   es: {
     translation: {
       hello: "Hola",
       nav: {
-        services: "Servicios",
-        works: "Proyectos",
+        about: "Sobre mi",
+        services: "Mis servicios",
         contact: "Contacto",
       },
       hero: {
@@ -200,7 +221,28 @@ export const resources = {
           },
         ],
       },
-      footer: 'Todos los derechos reservados.'
+      contact: {
+        title: "Comencemos a trabajar en tu proyecto",
+        subtitle: "Contacta conmigo",
+        btn: "Contactame",
+      },
+      footer: {
+        copyright: "Todos los derechos reservados.",
+        text_1: "Desarrollador web, especializado en Front-End",
+        text_2: "Auditor de código y buenas prácticas",
+        text_3: "Podes seguirme en mis redes",
+      },
+      modal: {
+        the_text: "Contacto",
+        title: "Formulario de contacto",
+        label_name: "Nombre",
+        label_email: "Correo",
+        label_msg: "Mensaje",
+        btn_submit: "Enviar",
+      },
+      drawer: {
+        close: 'Cerrar'
+      }
     },
   },
 };

@@ -8,8 +8,8 @@
 }
 
 .popup {
-  max-width: 23rem;
-  // max-width: max-content;
+  // max-width: 23rem;
+  max-width: max-content;
   height: max-content;
   background-color: var(--bg-color);
   position: fixed;
@@ -19,7 +19,6 @@
   display: flex;
   max-height: 80vh;
   overflow-y: auto;
-
 
   button {
     font-size: 0.67rem;
@@ -42,7 +41,7 @@
     }
   }
 
-  & > div:first-child {
+  & > div:first-of-type {
     flex: 1;
     display: flex;
     align-items: center;
@@ -64,9 +63,9 @@
     }
   }
 
-  & > div:last-child {
+  & > div:last-of-type {
     flex: 2;
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 2rem;
     form {
       display: flex;
       flex-direction: column;
@@ -149,14 +148,45 @@
   .msgSendedBtnContainer {
     margin-top: auto;
     display: flex;
-    gap: .7rem;
-    padding: 0 .6rem 0 0;
+    gap: 0.7rem;
+    padding: 0 0.6rem 0 0;
     & > button {
       flex: 1;
     }
   }
 }
 
+span.closeBtnContainer {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  right: 0rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & button {
+    all: unset;
+    width: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem ;
+    background-color: transparent;
+
+    &:active:not(:disabled) {
+      box-shadow: none;
+      transform: translateY(0rem) translateX(0rem);
+      scale: .9;
+    }
+  }
+
+  & img {
+    max-width: 1rem;
+    aspect-ratio: 1 /1;
+  }
+}
 .show {
   scale: 1;
 }

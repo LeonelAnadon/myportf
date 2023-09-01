@@ -13,7 +13,7 @@ const MyServices: Component = () => {
   });
 
   return (
-    <section class={styles.container}>
+    <section class={styles.container} id="services">
       <div>
         <div class={styles.skewContainer} >
           <h2>{t("myservices.title")}</h2>

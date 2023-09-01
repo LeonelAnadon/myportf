@@ -17,12 +17,16 @@
     justify-content: center;
   }
 
+  @media (max-width: 700px) {
+    min-height: 82vh;
+  }
+
   h1 {
     font-size: 7rem;
     // max-width: 40rem;
     font-family: "Staatliches", cursive;
     text-align: center;
-    
+
     line-height: 1;
 
     & > span {
@@ -40,7 +44,7 @@
       font-size: 4rem;
     }
     @media (max-width: 550px) {
-      font-size: 3.5rem;
+      font-size: 3.6rem;
     }
   }
 
@@ -48,14 +52,26 @@
     font-size: 1.3rem;
   }
 
-  
-.bgImage {
+  .bgImage {
     max-width: 80vmax;
     position: absolute;
     z-index: -1;
     left: 18vmax;
-    opacity: .3;
-}
+    opacity: 0.3;
+
+    @media (max-width: 1250px) {
+      left: 10vw;
+    }
+    @media (max-width: 1050px) {
+      left: 10vw;
+    }
+    @media (max-width: 850px) {
+      left: 10vw;
+    }
+    @media (max-width: 550px) {
+      left: 10vw;
+    }
+  }
 }
 
 .scrollIndicator {

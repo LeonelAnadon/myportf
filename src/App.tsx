@@ -33,15 +33,16 @@ const App: Component = () => {
 
   createEffect(() => {
     AOS.init();
+
+    document.body.classList.add("no-scroll");
+
     function loadListener() {
       setIsLoadingResources(false);
+      document.body.classList.remove("no-scroll")
     }
-
-    window.addEventListener("load", loadListener);
-
-    onCleanup(() => {
-      window.removeEventListener("load", loadListener);
-    });
+    setTimeout(() => {
+      loadListener();
+    }, 1000);
   });
 
   const toggleDarkMode = () => {
@@ -54,51 +55,40 @@ const App: Component = () => {
     setShowDrawer(!showDrawer());
   };
 
-  // if (isLoadingResources()) {
-  //   return (
-  //     <div class={styles.isLoadingResourcesContainer}>
-  //       <img alt="" src={signBlack} />
-  //       <SpinnerInit />
-  //     </div>
-  //   );
-  // }
-
   return (
     <>
-      <Show when={isLoadingResources()}>
-        <div class={styles.isLoadingResourcesContainer}>
-          <img alt="" src={signBlack} />
-          <SpinnerInit />
-        </div>
-      </Show>
-      <Show when={!isLoadingResources()}>
-        <div
-          class={`${styles.App} ${
-            isDarkMode() ? styles.darkMode : styles.lightMode
-          }`}
-        >
-          <Header
-            toggleDarkMode={toggleDarkMode}
-            isDarkMode={isDarkMode()}
-            toggleDrawer={toggleDrawer}
-          />
-          <Drawer
-            toggleDrawer={toggleDrawer}
-            showDrawer={showDrawer()}
-            isDarkMode={isDarkMode()}
-          />
-          <main>
-            <Hero />
-            <ScrollingTechnologies isDarkMode={isDarkMode()} />
-            <About />
-            <Separator />
-            <MyServices />
-            <Contact toggleModal={toggleModal} />
-          </main>
-          <Footer isDarkMode={isDarkMode()} />
-          <TheModal toggleModal={toggleModal} show={showModal()} />
-        </div>
-      </Show>
+      <div
+        class={`${styles.App} ${
+          isDarkMode() ? styles.darkMode : styles.lightMode
+        }`}
+      >
+        <Show when={isLoadingResources()}>
+          <div class={styles.isLoadingResourcesContainer}>
+            <img alt="" src={signBlack} />
+            <SpinnerInit />
+          </div>
+        </Show>
+        <Header
+          toggleDarkMode={toggleDarkMode}
+          isDarkMode={isDarkMode()}
+          toggleDrawer={toggleDrawer}
+        />
+        <Drawer
+          toggleDrawer={toggleDrawer}
+          showDrawer={showDrawer()}
+          isDarkMode={isDarkMode()}
+        />
+        <main>
+          <Hero />
+          <ScrollingTechnologies isDarkMode={isDarkMode()} />
+          <About />
+          <Separator />
+          <MyServices />
+          <Contact toggleModal={toggleModal} />
+        </main>
+        <Footer isDarkMode={isDarkMode()} />
+        <TheModal toggleModal={toggleModal} show={showModal()} />
+      </div>
     </>
   );
 };

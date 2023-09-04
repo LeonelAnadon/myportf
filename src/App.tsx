@@ -1,4 +1,10 @@
-import { createSignal, type Component, createEffect } from "solid-js";
+import {
+  createSignal,
+  type Component,
+  createEffect,
+  onCleanup,
+  Show,
+} from "solid-js";
 import styles from "./App.module.scss";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -11,18 +17,32 @@ import { IModalTechData } from "./interfaces/global";
 import Footer from "./components/Footer/Footer";
 import Separator from "./components/Separator/Separator";
 import Contact from "./components/Contact/Contact";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Drawer from "./components/Drawer/Drawer";
+import Spinner from "./components/Spinner/Spinner";
+import signBlack from "./assets/sign_black.png";
+import SpinnerInit from "./components/Spinner/SpinnerInit";
 
 const App: Component = () => {
   const [isDarkMode, setIsDarkMode] = createSignal<boolean>(false);
   const [showModal, setShowModal] = createSignal<boolean>(false);
   const [showDrawer, setShowDrawer] = createSignal<boolean>(false);
+  const [isLoadingResources, setIsLoadingResources] =
+    createSignal<boolean>(true);
 
   createEffect(() => {
-    AOS.init()
-  })
+    AOS.init();
+    function loadListener() {
+      setIsLoadingResources(false);
+    }
+
+    window.addEventListener("load", loadListener);
+
+    onCleanup(() => {
+      window.removeEventListener("load", loadListener);
+    });
+  });
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode());
@@ -33,25 +53,53 @@ const App: Component = () => {
   const toggleDrawer = () => {
     setShowDrawer(!showDrawer());
   };
+
+  // if (isLoadingResources()) {
+  //   return (
+  //     <div class={styles.isLoadingResourcesContainer}>
+  //       <img alt="" src={signBlack} />
+  //       <SpinnerInit />
+  //     </div>
+  //   );
+  // }
+
   return (
-    <div
-      class={`${styles.App} ${
-        isDarkMode() ? styles.darkMode : styles.lightMode
-      }`}
-    >
-      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode()} toggleDrawer={toggleDrawer} />
-      <Drawer toggleDrawer={toggleDrawer} showDrawer={showDrawer()} isDarkMode={isDarkMode()} />
-      <main>
-        <Hero />
-        <ScrollingTechnologies isDarkMode={isDarkMode()} />
-        <About />
-        <Separator />
-        <MyServices />
-        <Contact toggleModal={toggleModal} />
-      </main>
-      <Footer isDarkMode={isDarkMode()} />
-      <TheModal toggleModal={toggleModal} show={showModal()} />
-    </div>
+    <>
+      <Show when={isLoadingResources()}>
+        <div class={styles.isLoadingResourcesContainer}>
+          <img alt="" src={signBlack} />
+          <SpinnerInit />
+        </div>
+      </Show>
+      <Show when={!isLoadingResources()}>
+        <div
+          class={`${styles.App} ${
+            isDarkMode() ? styles.darkMode : styles.lightMode
+          }`}
+        >
+          <Header
+            toggleDarkMode={toggleDarkMode}
+            isDarkMode={isDarkMode()}
+            toggleDrawer={toggleDrawer}
+          />
+          <Drawer
+            toggleDrawer={toggleDrawer}
+            showDrawer={showDrawer()}
+            isDarkMode={isDarkMode()}
+          />
+          <main>
+            <Hero />
+            <ScrollingTechnologies isDarkMode={isDarkMode()} />
+            <About />
+            <Separator />
+            <MyServices />
+            <Contact toggleModal={toggleModal} />
+          </main>
+          <Footer isDarkMode={isDarkMode()} />
+          <TheModal toggleModal={toggleModal} show={showModal()} />
+        </div>
+      </Show>
+    </>
   );
 };
 

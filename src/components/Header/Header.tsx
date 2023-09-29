@@ -35,10 +35,10 @@ const Header: Component<HeaderProps> = (props) => {
     <header class={styles.container}>
       <div class={styles.imgContainer}>
         <Show when={!props.isDarkMode}>
-          <img alt="" src={signBlack} />
+          <img alt="leonel anadon firma" src={signBlack} />
         </Show>
         <Show when={props.isDarkMode}>
-          <img alt="" src={signWhite} />
+          <img alt="leonel anadon firma" src={signWhite} />
         </Show>
       </div>
       <nav>
@@ -67,7 +67,7 @@ const Header: Component<HeaderProps> = (props) => {
             onClick={() => handleToggleLng("en")}
             title="English"
           >
-            <img alt="" src={langIcon} />
+            <img alt="seleccionar idioma" src={langIcon} />
             EN
           </button>
         </Show>
@@ -77,18 +77,18 @@ const Header: Component<HeaderProps> = (props) => {
             onClick={() => handleToggleLng("es")}
             title="Español"
           >
-            <img alt="" src={langIcon} />
+            <img alt="seleccionar idioma" src={langIcon} />
             ES
           </button>
         </Show>
         <Show when={props.isDarkMode}>
           <button type="button" onClick={props.toggleDarkMode}>
-            <img alt="" src={sunIcon} />
+            <img alt="seleccionar tema claro" src={sunIcon} />
           </button>
         </Show>
         <Show when={!props.isDarkMode}>
           <button type="button" onClick={props.toggleDarkMode}>
-            <img alt="" src={moonIcon} />
+            <img alt="seleccionar tema claro" src={moonIcon} />
           </button>
         </Show>
         <button class={styles.menuHidden} onClick={() => props.toggleDrawer()}>

@@ -20,7 +20,7 @@ const Footer: Component<FooterProps> = (props) => {
       <div>
         <div class={styles.footerDetails}>
           <Show when={!props.isDarkMode}>
-            <img alt="" src={signBlack} />
+            <img alt="leonel anadon firma" src={signBlack} />
           </Show>
           <Show when={props.isDarkMode}>
             <img alt="" src={signWhite} />
@@ -35,11 +35,11 @@ const Footer: Component<FooterProps> = (props) => {
           </div>
           <div class={styles.sep}></div>
           <div class={styles.rrssContainer}>
-            <a href="https://github.com/LeonelAnadon" target="_blank">
-              <img alt="" src={gitLogo} />
+            <a href="https://github.com/LeonelAnadon" target="_blank" rel="canonical">
+              <img alt="github leonel anadon" src={gitLogo} />
             </a>
-            <a href="https://www.linkedin.com/in/leonelanadon/" target="_blank">
-              <img alt="" src={linkedinLogo} />
+            <a href="https://www.linkedin.com/in/leonelanadon/" target="_blank" rel="canonical">
+              <img alt="linkedin leonel anadon" src={linkedinLogo} />
             </a>
           </div>
         </div>

@@ -11,14 +11,14 @@
 
   div:first-child {
     flex: 1;
-    // display: flex;
-    // align-items: center;}
-    // justify-content: center;
     background-image: url(../../assets/images/looper.svg);
     background-position: 100% 50%;
     background-size: 210%;
     background-repeat: no-repeat;
 
+    @media (max-width: 1000px) {
+      background-size: cover;
+    }
 
     h3 {
       @include resalt-this;

@@ -38,7 +38,7 @@ const App: Component = () => {
 
     function loadListener() {
       setIsLoadingResources(false);
-      document.body.classList.remove("no-scroll")
+      document.body.classList.remove("no-scroll");
     }
     setTimeout(() => {
       loadListener();

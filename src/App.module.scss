@@ -1,14 +1,14 @@
 @import "./globalStyles.scss";
 
 .App {
-  --bg-color: rgb(38, 40, 49)
+  --bg-color: rgb(0, 0, 0);
   --font-color: rgb(255, 255, 255);
-  --bg-light-color: rgba(38, 40, 49, .9);
+  --bg-light-color:rgb(15, 15, 15);
 
   &.darkMode {
-    --bg-color: rgb(38, 40, 49);
+    --bg-color: rgb(0, 0, 0);
     --font-color: rgb(255, 255, 255);
-    --bg-light-color:rgb(38, 40, 49);
+    --bg-light-color:rgb(15, 15, 15);
   }
 
   &.lightMode {

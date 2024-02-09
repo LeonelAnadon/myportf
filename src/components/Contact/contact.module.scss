@@ -12,6 +12,7 @@
     padding: 0 2.5rem;
     box-shadow: 0.5rem 0.4rem 0 $sunglow;
     transform: skewX(-20deg);
+    border-radius: 4px;
 
     @media (max-width: 800px) {
       flex-direction: column;
@@ -57,5 +58,6 @@
     padding: 0.38rem 1rem;
     cursor: pointer;
     color: black;
+    border-radius: 4px;
   }
 }

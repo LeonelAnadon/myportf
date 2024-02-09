@@ -23,10 +23,10 @@ const TechBox: Component = () => {
   });
 
   return (
-    <div class={styles.container}>
+    <div class={styles.container} itemscope itemtype="http://schema.org/Person">
       <div data-aos="fade-left">
         <h3>{t("techbox.front.title")}</h3>
-        <div>
+        <div itemprop="knowsAbout">
           <For each={techboxArray()} fallback={<span>Cargando...</span>}>
             {(element) => {
               return <span data-aos="fade-left">{element}</span>;
@@ -36,7 +36,7 @@ const TechBox: Component = () => {
       </div>
       <div data-aos="fade-left">
         <h3>{t("techbox.back.title")}</h3>
-        <div>
+        <div itemprop="knowsAbout">
           <For each={techboxArrayBack()} fallback={<span>Cargando...</span>}>
             {(element) => {
               return <span data-aos="fade-left">{element}</span>;

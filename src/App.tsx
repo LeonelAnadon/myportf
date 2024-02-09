@@ -21,11 +21,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Drawer from "./components/Drawer/Drawer";
 import Spinner from "./components/Spinner/Spinner";
-import signBlack from "./assets/sign_black.png";
+import signWhite from "./assets/sign_white.png";
 import SpinnerInit from "./components/Spinner/SpinnerInit";
 
 const App: Component = () => {
-  const [isDarkMode, setIsDarkMode] = createSignal<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = createSignal<boolean>(true);
   const [showModal, setShowModal] = createSignal<boolean>(false);
   const [showDrawer, setShowDrawer] = createSignal<boolean>(false);
   const [isLoadingResources, setIsLoadingResources] =
@@ -64,8 +64,8 @@ const App: Component = () => {
       >
         <Show when={isLoadingResources()}>
           <div class={styles.isLoadingResourcesContainer}>
-            <img alt="" src={signBlack} />
-            <SpinnerInit />
+            <img alt="Leonel Anadón Logo" src={signWhite} />
+            <Spinner />
           </div>
         </Show>
         <Header

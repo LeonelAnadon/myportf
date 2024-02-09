@@ -36,13 +36,14 @@
 
 .imgContainer {
   & > img {
-    width: 5rem;
+    display: block;
+    width: 6rem;
   }
 }
 
 .btnContainers {
   display: flex;
-  gap: 1rem;
+  gap: .6rem;
   align-items: center;
 
   & button:not(.menuHidden) {
@@ -58,6 +59,7 @@
     width: calc(10px + 2vmin);
     background-color: transparent;
     color: $purple;
+    border-radius: 4px;
 
     & img {
       max-width: 0.8rem;
@@ -74,6 +76,7 @@
     height: 1.4rem;
     width: calc(10px + 2vmin);
     background-color: transparent;
+    border-radius: 4px;
 
     @media (max-width: 730px) {
       display: flex;

@@ -20,6 +20,7 @@
   background-color: var(--bg-color);
   box-shadow: .5rem .4rem 0 darken($purple, 20%);
   margin-bottom: 1rem;
+  border-radius: 4px;
   & > * {
     transform: skewX(20deg);
   }

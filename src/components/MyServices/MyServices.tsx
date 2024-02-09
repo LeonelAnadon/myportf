@@ -13,9 +13,14 @@ const MyServices: Component = () => {
   });
 
   return (
-    <section class={styles.container} id="services">
+    <section
+      class={styles.container}
+      id="services"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+    >
       <div>
-        <div class={styles.skewContainer} >
+        <div class={styles.skewContainer}>
           <h2>{t("myservices.title")}</h2>
         </div>
         <div class={styles.servicesContainer}>

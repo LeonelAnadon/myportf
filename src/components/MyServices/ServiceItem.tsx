@@ -11,8 +11,8 @@ const ServiceItem: Component<ServiceItemProps> = (props) => {
     <div class={styles.container} data-aos="fade-left">
       <div>{/* <h3>React</h3> */}</div>
       <div>
-        <h4>{props.data.title}</h4>
-        <p>{props.data.desc}</p>
+        <h4 itemprop="name">{props.data.title}</h4>
+        <p itemprop="description">{props.data.desc}</p>
       </div>
     </div>
   );

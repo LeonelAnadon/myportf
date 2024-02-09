@@ -11,6 +11,7 @@ import closeIcon from "../../assets/icons/close.svg";
 import signBlack from "../../assets/sign_black.png";
 import signWhite from "../../assets/sign_white.png";
 import { Trans } from "@mbarzda/solid-i18next";
+import signWeb from "../../assets/sign_white.png";
 
 interface DrawerProps {
   toggleDrawer: () => void;
@@ -53,7 +54,16 @@ const Drawer: Component<DrawerProps> = (props) => {
             </a>
           </li>
         </ul>
-        {/* <p>Este es el contenido del cajón.</p> */}
+      </div>
+      <div class={styles.signatureContainer}>
+        <Show when={!props.isDarkMode}>
+          <img alt="Leonel Anadon Firma" src={signBlack} />
+        </Show>
+        <Show when={props.isDarkMode}>
+          <img alt="Leonel Anadon Firma" src={signWhite} />
+        </Show>
+        <p>Cualquier consulta no dudes en llenar el formulario de contacto.</p>
+        <p>¡Gracias por visitar mi perfil! ⭐</p>
       </div>
     </div>
   );

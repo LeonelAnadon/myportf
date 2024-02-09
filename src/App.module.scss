@@ -103,8 +103,9 @@ section {
   opacity: 1;
   position: fixed;
   inset: 0;
-  background-color: white;
+  background-color: black;
   z-index: 99;
+  color: $purple;
 
   img {
     max-width: 10rem;

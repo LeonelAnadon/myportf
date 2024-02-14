@@ -1,4 +1,9 @@
-import type { Component } from "solid-js";
+import {
+  createSignal,
+  type Component,
+  createEffect,
+  onCleanup,
+} from "solid-js";
 import App from "./App";
 import { TransProvider, Trans } from "@mbarzda/solid-i18next";
 import { resources } from "./i18n/lng";

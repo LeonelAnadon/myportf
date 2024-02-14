@@ -20,11 +20,29 @@ interface HeaderProps {
   isDarkMode: boolean;
 }
 
+const storedLng = localStorage.getItem("lng");
+const initialLng = storedLng ? JSON.parse(storedLng) : "es";
+
 const Header: Component<HeaderProps> = (props) => {
   const [, i18n] = useTransContext();
-  const [currentLanguage, setCurrentLanguage] = createSignal<string>(
-    i18n.getI18next().language
-  );
+  const [currentLanguage, setCurrentLanguage] =
+    createSignal<string>(initialLng);
+
+  createEffect(() => {
+    const localStorageHandler = () => {
+      localStorage.setItem("lng", JSON.stringify(currentLanguage()));
+    };
+    localStorageHandler();
+
+
+    onCleanup(() => {
+      localStorageHandler();
+    });
+  });
+
+  createEffect(() => {
+    i18n.changeLanguage(initialLng);
+  })
 
   const handleToggleLng = (lng: string) => {
     i18n.changeLanguage(lng);

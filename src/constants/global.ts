@@ -3,7 +3,7 @@ const GLOBAL = {
   META_TITLE: "Leonel Anadón - Front End | Auditor web",
   URL: "https://lanadon.com.ar",
   TILE_COLOR: "#f526ff",
-  KEYWORDS: "Leonel Anadon, Leonel Anadón, Front End, Desarrollador, Auditor web, jack balasto, web",
+  KEYWORDS: "Leonel Anadon, Front End, Desarrollador, Auditor web, web",
   AUTHOR: "Leonel Anadón",
   LANGUAGE: "Spanish",
   DESCRIPTION:

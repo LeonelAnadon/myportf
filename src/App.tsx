@@ -24,8 +24,12 @@ import Spinner from "./components/Spinner/Spinner";
 import signWhite from "./assets/sign_white.png";
 import SpinnerInit from "./components/Spinner/SpinnerInit";
 
+const storedDarkMode = localStorage.getItem("darkMode");
+const initialDarkModeState = storedDarkMode ? JSON.parse(storedDarkMode) : true;
+
 const App: Component = () => {
-  const [isDarkMode, setIsDarkMode] = createSignal<boolean>(true);
+  const [isDarkMode, setIsDarkMode] =
+    createSignal<boolean>(initialDarkModeState);
   const [showModal, setShowModal] = createSignal<boolean>(false);
   const [showDrawer, setShowDrawer] = createSignal<boolean>(false);
   const [isLoadingResources, setIsLoadingResources] =
@@ -34,6 +38,12 @@ const App: Component = () => {
   createEffect(() => {
     AOS.init();
 
+    const localStorageHandler = () => {
+      localStorage.setItem("darkMode", JSON.stringify(isDarkMode()));
+    };
+
+    localStorageHandler();
+
     document.body.classList.add("no-scroll");
 
     function loadListener() {
@@ -41,6 +51,10 @@ const App: Component = () => {
       document.body.classList.remove("no-scroll");
     }
     loadListener();
+
+    onCleanup(() => {
+      localStorageHandler();
+    });
   });
 
   const toggleDarkMode = () => {

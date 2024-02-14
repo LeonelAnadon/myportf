@@ -23,7 +23,7 @@ const Contact: Component<ContactProps> = (props) => {
           <p>{t("contact.subtitle")}</p>
         </div>
         <div class={styles.btnContainer}>
-          <button onClick={props.toggleModal}>{t("contact.btn")}</button>
+          <button aria-label="Boton para ponerse en contacto" onClick={props.toggleModal}>{t("contact.btn")}</button>
         </div>
       </div>
     </section>

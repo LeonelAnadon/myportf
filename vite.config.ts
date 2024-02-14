@@ -1,6 +1,5 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
-// import devtools from 'solid-devtools/vite';
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
   plugins: [
@@ -15,7 +14,7 @@ export default defineConfig({
     port: 3003,
   },
   build: {
-    target: 'esnext',
-    outDir: 'public',
+    target: "esnext",
+    outDir: "public",
   },
 });

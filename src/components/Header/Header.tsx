@@ -34,7 +34,6 @@ const Header: Component<HeaderProps> = (props) => {
     };
     localStorageHandler();
 
-
     onCleanup(() => {
       localStorageHandler();
     });
@@ -42,7 +41,7 @@ const Header: Component<HeaderProps> = (props) => {
 
   createEffect(() => {
     i18n.changeLanguage(initialLng);
-  })
+  });
 
   const handleToggleLng = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -53,10 +52,10 @@ const Header: Component<HeaderProps> = (props) => {
     <header class={styles.container}>
       <div class={styles.imgContainer}>
         <Show when={!props.isDarkMode}>
-          <img alt="leonel anadon firma" src={signBlack} />
+          <img width={96} alt="leonel anadon firma" src={signBlack} />
         </Show>
         <Show when={props.isDarkMode}>
-          <img alt="leonel anadon firma" src={signWhite} />
+          <img width={96} alt="leonel anadon firma" src={signWhite} />
         </Show>
       </div>
       <nav>
@@ -81,36 +80,46 @@ const Header: Component<HeaderProps> = (props) => {
       <div class={styles.btnContainers}>
         <Show when={currentLanguage() === "es"}>
           <button
+            aria-label={`Seleccionar idioma ${currentLanguage()}`}
             type="button"
             onClick={() => handleToggleLng("en")}
             title="English"
           >
-            <img alt="seleccionar idioma" src={langIcon} />
+            <img width={96} alt="seleccionar idioma" src={langIcon} />
             EN
           </button>
         </Show>
         <Show when={currentLanguage() === "en"}>
           <button
+            aria-label={`Seleccionar idioma ${currentLanguage()}`}
             type="button"
             onClick={() => handleToggleLng("es")}
             title="Español"
           >
-            <img alt="seleccionar idioma" src={langIcon} />
+            <img width={96} alt="Seleccionar idioma" src={langIcon} />
             ES
           </button>
         </Show>
         <Show when={props.isDarkMode}>
-          <button type="button" onClick={props.toggleDarkMode}>
-            <img alt="seleccionar tema claro" src={sunIcon} />
+          <button
+            aria-label="Seleccionar tema claro"
+            type="button"
+            onClick={props.toggleDarkMode}
+          >
+            <img width={96} alt="seleccionar tema claro" src={sunIcon} />
           </button>
         </Show>
         <Show when={!props.isDarkMode}>
-          <button type="button" onClick={props.toggleDarkMode}>
-            <img alt="seleccionar tema claro" src={moonIcon} />
+          <button
+            aria-label="Seleccionar tema oscuro"
+            type="button"
+            onClick={props.toggleDarkMode}
+          >
+            <img width={96} alt="seleccionar tema oscuro" src={moonIcon} />
           </button>
         </Show>
-        <button class={styles.menuHidden} onClick={() => props.toggleDrawer()}>
-          <img alt="" src={menuIcon} />
+        <button aria-label="Abrir menu" class={styles.menuHidden} onClick={() => props.toggleDrawer()}>
+          <img width={96} alt="" src={menuIcon} />
         </button>
       </div>
     </header>

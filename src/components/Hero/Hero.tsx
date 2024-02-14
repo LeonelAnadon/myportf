@@ -20,7 +20,7 @@ const Hero: Component = () => {
         </h1>
       </div>
       <span class={styles.scrollIndicator}>&#94;</span>
-      <img class={styles.bgImage} alt="" src={looperImg} />
+      <img fetchpriority="high" width={1200} class={styles.bgImage} alt="" src={looperImg} />
     </section>
   );
 };

@@ -40,9 +40,7 @@ const App: Component = () => {
       setIsLoadingResources(false);
       document.body.classList.remove("no-scroll");
     }
-    setTimeout(() => {
-      loadListener();
-    }, 1000);
+    loadListener();
   });
 
   const toggleDarkMode = () => {

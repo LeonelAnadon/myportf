@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" type="image/ico" href="/assets/favicon-0e726a38.ico" />
-    <title>Solid App</title>
-    <script type="module" crossorigin src="/assets/index-327fd25c.js"></script>
-    <link rel="stylesheet" href="/assets/index-491e11a8.css">
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+<html lang="es">
 
-    
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f759ff" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-dc0b2166.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH5wkBEgkkgFqsCAAABJBJREFUWMPtlluIlVUUx39r7+87F8ewvEyaFJpIpUkxlpngaIaVRmSQNepIpT2U2UUlk1BM0hDDIJVBEmtAy1DEHsrUJquxokZQX2bCIDSVQk3xduZcvm/v1cM5Yw06zukC9TD/57XW/7//a7H2gi504T+G/JPkbI22VQmAAHBAlN7UvuzpSUq3NCgYIAFEgGtLKp9wipIaCrlmrgaGAVXAIKAn0A34ENjcTmBRSx+FCcAYoBdwCHgjhpNlCcg+rhAoeO2ba6YGZGLJvRagGTgGnCsVLpF7QANgIshcIAd8VIpdDuwAdnYqIDvVgXiD8gAi81F+A10N8rUoZ1TQP1t+okqLOWh3YA4qNaDvgNQjehZ0DIhH+YXOWpCtzaNBRiRO1YLMA6kDswG0VURIvX/pCF01JALoA7IcpQoxs8mbL0hFAP1QWQSyC7UtiO94CLNPXAA1IFqNmjpUliS6H99SON+X9MbkJfGZKYpJZEDoh5o1qAxEzUzQ/ZgYhErUrEKlAm9mIpxIb0h27ICEOUCT6oMXUNNAodvWQmuvy5ID2IpTAL1VzSrU3Io3tYjuFxsBOlDVrsTbJGqew+gJUcOVWxDmAK4XLdyCyiqSGZ9ae91lQ3OzDwHnKnDhUlFTjbczCAp7CSKLs+PxwULxwUGcXYjorwCpdZWdCEidB+gOKOjJjsLyL++D4HighYqX8ME0vF0oPw7ezrB9N6oPZxOHo/FhPS54j1BbU2sGtsvvuAXpMwAnMS6PcYNQ80NuwV5Sy+/8g/y1XUhO0UR2sthoPj7YRDLzCSOPzCVOPixxogUTPxlHcbNNRaRWVF3K0+HLln6KPzxSzKDG1yUojCbMzvIu0WJMrIk5teSXbUWSERg/nDixGZUe2Hgr3vbXOHkUl9iIShMqUXLx+A6NvuIqLrxdD0hPbGEZQeFubOFbMe4AoqeAEG9vUJd4DG+qULuHONyGCz8TOKgqcWJuLZ2h078gWr8S8CmMr8a4+xA/oLjhpBXj7kD8YNTsIUpOQ/QoNiacvqhT4rIFtCH+fDIa5uDUAKtn+6vpdXgU3m7GG9QHNSKu0fuAxKNvlU3+lwRcFNJQA2glPvwAlWrUzLMz6le7dU8TPLieePfktroKEIzb8u8JcI0PgWgaF6xQNc+A1OGCBYhmxeTAKsC1qBkL5mMgY8dsu2LNsr9j9839IPk0al9F/ExRWY+axdhCliBCvKDG34a3z6LaIHGiFZsvrwXuu3sBsaA9gCTFg+ECEuRQD3iA3qgsBpmKSh3Im8A5jCseJMojqExFzVp1qZ1i89hROzoVELjv7wF8H5BXgJtKoiyQgagF0a+K/ZTngWtAnxLsdsXHmBigEuRFhNtBliCuSYzDjmwoy9m2FgwBnYTwLuhPqPQAbgbGAzOAAqJHEL8ROK244UAKGIbKBNAjwCzQnzX0BMN3lz1X4prGQnHnTwdGUDytPHCB4vVyADhacmco0B+oKMUcA3YCjUDejviybOJ2M+CbxgKCFk+osGg5kbrQiXHYu3YTNY0DFYxcvCV9aVb07xB3oQv/G/wO6qHln9wyBTwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDktMDFUMTg6MDk6MzYrMDA6MDCTiez2AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA5LTAxVDE4OjA5OjM2KzAwOjAw4tRUSgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==">
+  <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABpFBMVEUAAAD3Wf/2Wf/4WP/3Wf71Uv33XPr3bt/4Y+33Xvb3W/z4Zev3YfL4btzzH//3XvD5ds73Y+75e8X5esf4ctX6kKL6nor5hrT9rm/4i6v/4hf9wk79x0b9wU/9yET9w0v9yUH+ykL90Dj9ykD3Wf/3Wf/3Wf/3Wf/3Wf/3Wf73Wf/3Wf/3Wf/3Wf/3Wf/3Wf73Wf/3Wf/3Wf/3Wf/3XPr3W/z3Wf73Wf/3Xfn3W/v3Wf73Wvz3W/z3Wv74ZO33YPP3Xfj4Zer3YfH3Xfj4Zuj3YfH3Xvf4btz4bN75esf4b9r4auL5dc/4bd34Zun1T//5e8X5hLf6k577nI37oIf6ia75hLf5hbX5fMT4c9L6k537m4/7oIf7ooT7nov6lZr6jKr5gbz7m5D7rm/8tWT8sGv9xkf9w039yEP9w0v8wFH8u1r9xkf9w0v9wVD9yUH9yUL9yUL9yUL9yUH9yEP9x0b9x0T9yUH9yET9xUj9yUH9ykH9ykD9ykD9ykH9ykD9ykD9ykD9yUH9yUL9ykD9ykD9ykD9zD79ykD9ykD9ykD///9lcu49AAAAi3RSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEA8BChJNaWdFAgdLb38mJXdHFBBwXSN/Hgt7Kg+BURR1QiZ0BntwOHc6ARV/IAQDZb5tWxk0d22L0F0YAQUhtG0DAQqBhggYQwgOUFtNNnpvDjNlHh+FhJGDel5jWRMKEwsBBxAChps+2AAAAAFiS0dEi/JvR+AAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfnCQESCSMePjmrAAAAtElEQVQY02NgIA4wMqqoqqkzMmmoqYO4zCyaWto6unr6BoZGxkA+K5uJqZm5CruFpZW1jS1QgMPO3oGTi9vRydnF1Y0HKMDr7sHHL+Dp5e3j6+cvCBQQCggMCg4JDQuPiBQWAZkpKhYVHRMbF5+QKA61VEIyKTklVSotXRrmDJmMzKzsnNw8WRAnv6CwqLiktKy8olJOHiRQVV1TW1ff0NjUrKAIVq7U0trW3tHa2aVMpDcZAIrxJnCaGYIXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTA5LTAxVDE4OjA5OjM1KzAwOjAwomH2awAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wOS0wMVQxODowOTozNSswMDowMNM8TtcAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=">
+  <link rel="manifest" href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiTGVvbmVsIEFuYWTDs24gV2ViIiwKICAgICJzaG9ydF9uYW1lIjogIkwuIEFuYWTDs24iLAogICAgImljb25zIjogWwogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvYXNzZXRzL2FuZHJvaWQtY2hyb21lLTE5MngxOTIucG5nIiwKICAgICAgICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAgICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICAgICAgfQogICAgXSwKICAgICJ0aGVtZV9jb2xvciI6ICIjZjUyNmZmIiwKICAgICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmNTI2ZmYiLAogICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIKfQo=">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab-172c6f2a.svg" color="#5bbad5">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D6NEKWL51"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0D6NEKWL51');
+  </script>
+  <script type="module" crossorigin src="/assets/index-3b1104f0.js"></script>
+  <link rel="stylesheet" href="/assets/index-ff44cc4f.css">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  
+</body>
+
 </html>

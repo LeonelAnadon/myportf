@@ -5,9 +5,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build && npm run copy-robots",
-    "copy-robots": "npm-run-all copy:robots",
-    "copy:robots": "cp robots.txt public/",
+    "build": "sh scripts/build.sh",
     "serve": "vite preview"
   },
   "license": "MIT",

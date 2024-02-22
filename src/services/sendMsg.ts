@@ -6,7 +6,7 @@ export async function sendMsg(formData: IFormData) {
     if (formData.name === "") return;
     if (formData.msg === "") return;
 
-    const response = await fetch(`${import.meta.env.VITE_BASE_URL}sendThis`, {
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/lndn/sendThis`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
